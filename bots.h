@@ -8,9 +8,12 @@
 
 #include "botbase.h"
 
-class cBotRandom : public cBotBase
+
+class cDjikstra : public cBotBase
 {
 	virtual void ChooseNextGridPosition();
+	virtual void Buid( cBotBase &bot);
+
 };
 
 
