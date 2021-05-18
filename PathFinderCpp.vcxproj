@@ -131,6 +131,7 @@
     <ClCompile Include="dynamic.cpp" />
     <ClCompile Include="level.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="botSimple.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="botbase.h" />
