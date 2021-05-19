@@ -84,7 +84,7 @@ class cDjikstra
                     }
                     else
                     {
-                        newcost = 1f
+                        newcost = 1.0f
                     }
 
                     //Assign new cost;
@@ -98,11 +98,29 @@ class cDjikstra
                         linkX[positionHold[i][0]] [positionHold[i][1]] = parent[0];
                         linkY[positionHold[i][0]] [positionHold[i][1]] = parent[1];
                     }
-                    
+                    closed[parent[0]] [parent[1]] = true
                 }
-
-
+                if(parent[0] == gTarget.PositionX() && parent[1] == gTarget.PositionY()) break;
 
             }
         }
+        Retrace()
+        {
+            // traceback
+
+                bool done = false; //set to true when we are back at the bot position
+                int nextClosedX = gTarget.PositionX(); //start of path
+                int nextClosedY = gTarget.PositionY(); //start of path
+                while (!done)
+                {
+                    inPath[nextClosedX][nextClosedY] = true;
+                    int tmpX = nextClosedX;
+                    int tmpY = nextClosedY;
+                    nextClosedX = linkX[tmpX][tmpY];
+                    nextClosedY = linkY[tmpX][tmpY];
+                    if ((nextClosedX == bot.PositionX()) && (nextClosedY == bot.PositionY())) done = true;
+                }
+                completed = true;
+        }
+        
 }
