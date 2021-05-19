@@ -12,7 +12,8 @@
 class cDjikstra : public cBotBase
 {
 	virtual void ChooseNextGridPosition();
-	virtual void Buid( cBotBase &bot);
+	virtual void Build( cBotBase &bot);
+	virtual void Retrace();
 
 };
 
